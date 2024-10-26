@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Licences, Certifications et Projets</title>
     <style>
+        /* Fond de l'ensemble de la page inspiré de l'espace */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #0d1b2a;
+            color: #e0e1dd;
             margin: 0;
             padding: 0;
+            background-image: radial-gradient(circle at 20% 20%, #1a2b47, #0d1b2a), 
+                              url('https://www.transparenttextures.com/patterns/stardust.png'); /* Texture d'étoiles */
         }
         .container {
             width: 90%;
@@ -18,12 +22,24 @@
         }
         h1, h2 {
             text-align: center;
-            color: #333;
+            color: #e0e1dd;
         }
+        
+        /* Style de l'image de profil */
+        .profile-image {
+            display: block;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            border: 3px solid #ffffff; /* Bordure blanche pour contraster avec le fond spatial */
+        }
+        
         .card {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             margin: 20px 0;
             padding: 20px;
             transition: transform 0.2s ease;
@@ -33,17 +49,17 @@
         }
         .title {
             font-size: 1.2em;
-            color: #0073e6;
+            color: #82aaff;
             margin-bottom: 10px;
         }
         .date, .competences, .description, .certification-id {
-            color: #555;
+            color: #a5b4c2;
             margin-bottom: 5px;
         }
         .certification-id {
             font-weight: bold;
             font-size: 0.9em;
-            color: #333;
+            color: #e0e1dd;
         }
         .competences {
             font-style: italic;
