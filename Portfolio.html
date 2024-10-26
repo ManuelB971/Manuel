@@ -25,7 +25,35 @@
             color: #e0e1dd;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
-        
+         /* Menu déroulant */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            color: #e0e1dd;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .navbar ul li a:hover {
+            color: #82aaff;
+        }
         /* Style de l'image de profil */
         .profile-image {
             display: block;
@@ -95,6 +123,15 @@
     </style>
 </head>
 <body>
+<!-- Menu de navigation -->
+<div class="navbar">
+    <ul>
+        <li><a href="#formations">Formations</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#experiences">Expériences</a></li>
+        <li><a href="#certifications">Licences et Certifications</a></li>
+    </ul>
+</div>
 
 <div class="container">
         <!-- Image de profil -->
@@ -103,7 +140,7 @@
     <h1>Mon Portfolio</h1>
 
     <h2>Formations</h2>
-
+    <h2 id="formations">Formations</h2>
     <div class="card">
         <div class="title">ECE. Ecole d'ingénieurs. Engineering School.</div>
         <div class="date">sept. 2022 - juin 2026</div>
@@ -124,6 +161,7 @@
    
     <!-- Section Projets -->
     <h2>Projets</h2>
+    <h2 id="projets">Projets</h2>
 
     <div class="card">
         <div class="title">Création de Site Web de location de voiture de luxe</div>
@@ -150,7 +188,7 @@
     </div>
 
     <h2>Expériences</h2>
-
+    <h2 id="experiences">Expériences</h2>
     <div class="card">
         <div class="experience-header">
             
@@ -193,7 +231,7 @@
     </div>
  <!-- Section Licences et Certifications -->
     <h2>Licences et Certifications</h2>
-
+    <h2 id="certifications">Licences et Certifications</h2>
     <div class="card">
         <div class="title">Building a Small Business Website with Open Source WordPress</div>
         <div class="date">Date de délivrance : oct. 2024</div>
