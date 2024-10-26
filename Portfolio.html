@@ -64,7 +64,24 @@
             border: 3px solid #ffffff;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2); /* Éclat lumineux autour de l'image */
         }
+        .card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
         
+        /* Effet de chargement */
+        body {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        body.loaded {
+            opacity: 1;
+        }
         /* Cartes avec fond transparent */
         .card {
             background-color: rgba(255, 255, 255, 0.1);
@@ -123,6 +140,54 @@
     </style>
 </head>
 <body>
+
+    <script>
+        // Défilement fluide
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Animation des cartes
+        const cards = document.querySelectorAll('.card');
+
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // Animation de chargement
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Animation de texte
+        const titles = document.querySelectorAll('h1, h2');
+        titles.forEach((title, index) => {
+            title.style.transition = 'opacity 0.5s ease';
+            title.style.opacity = '0';
+            setTimeout(() => {
+                title.style.opacity = '1';
+            }, index * 500);
+        });
+    </script>
 <!-- Menu de navigation -->
 <div class="navbar">
     <ul>
