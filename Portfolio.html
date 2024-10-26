@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Licences, Certifications et Projets</title>
     <style>
-        /* Style d'un fond spatial plus réaliste */
+        /* Style de base */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,17 +15,6 @@
             overflow-x: hidden;
             background-size: cover;
         }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            text-align: center;
-        }
-        h1, h2 {
-            color: #e0e1dd;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-         /* Menu déroulant */
         .navbar {
             position: fixed;
             top: 0;
@@ -54,7 +43,13 @@
         .navbar ul li a:hover {
             color: #82aaff;
         }
-        /* Style de l'image de profil */
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 100px auto 20px;
+            text-align: center;
+        }
         .profile-image {
             display: block;
             width: 90px;
@@ -62,27 +57,8 @@
             border-radius: 50%;
             margin: 20px auto;
             border: 3px solid #ffffff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2); /* Éclat lumineux autour de l'image */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2);
         }
-        .card {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Effet de chargement */
-        body {
-            opacity: 0;
-            transition: opacity 1s;
-        }
-        body.loaded {
-            opacity: 1;
-        }
-        /* Cartes avec fond transparent */
         .card {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
@@ -94,48 +70,22 @@
         .card:hover {
             transform: scale(1.02);
         }
+        h1, h2 {
+            color: #e0e1dd;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
         .title {
             font-size: 1.2em;
             color: #82aaff;
             margin-bottom: 10px;
         }
-        .date, .competences, .description, .certification-id {
-            color: #a5b4c2;
-            margin-bottom: 5px;
-        }
-        .certification-id {
+        .certification-link {
+            color: #82aaff;
+            text-decoration: none;
             font-weight: bold;
-            font-size: 0.9em;
-            color: #e0e1dd;
         }
-        .competences {
-            font-style: italic;
-        }
-
-        /* Effet de ciel étoilé en pseudo-éléments */
-        body::before, body::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at random(20%, 80%), #ffffff33 1px, transparent 1px);
-            z-index: -1;
-        }
-        body::before {
-            background-size: 2px 2px;
-            opacity: 0.6;
-            animation: twinkling 5s infinite alternate;
-        }
-        body::after {
-            background-size: 3px 3px;
-            opacity: 0.4;
-            animation: twinkling 8s infinite alternate;
-        }
-        @keyframes twinkling {
-            from { opacity: 0.4; }
-            to { opacity: 0.6; }
+        .certification-link:hover {
+            color: #ffa82a;
         }
     </style>
 </head>
