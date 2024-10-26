@@ -14,18 +14,28 @@
             background: radial-gradient(circle at 50% 50%, #1c1c3b, #0d1b2a, #090e1b);
             overflow-x: hidden;
             background-size: cover;
+            opacity: 0; /* Pour le chargement */
+            transition: opacity 1s;
+            position: relative; /* Nécessaire pour les pseudo-éléments */
         }
+        body.loaded {
+            opacity: 1; /* Pour rendre le corps visible après le chargement */
+        }
+    
         .container {
             width: 90%;
             max-width: 800px;
             margin: 20px auto;
             text-align: center;
+            padding-top: 60px; /* Pour éviter que la navbar n'obscurcisse le contenu */
         }
+    
         h1, h2 {
             color: #e0e1dd;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
-         /* Menu déroulant */
+    
+        /* Menu déroulant */
         .navbar {
             position: fixed;
             top: 0;
@@ -35,25 +45,30 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             z-index: 1000;
         }
+    
         .navbar ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             text-align: center;
         }
+    
         .navbar ul li {
             display: inline;
             margin: 0 15px;
         }
+    
         .navbar ul li a {
             color: #e0e1dd;
             text-decoration: none;
             font-size: 1em;
             font-weight: bold;
         }
+    
         .navbar ul li a:hover {
             color: #82aaff;
         }
+    
         /* Style de l'image de profil */
         .profile-image {
             display: block;
@@ -64,26 +79,11 @@
             border: 3px solid #ffffff;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2); /* Éclat lumineux autour de l'image */
         }
+    
         .card {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Effet de chargement */
-        body {
-            opacity: 0;
-            transition: opacity 1s;
-        }
-        body.loaded {
-            opacity: 1;
-        }
-        /* Cartes avec fond transparent */
-        .card {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -91,27 +91,37 @@
             padding: 20px;
             transition: transform 0.2s ease;
         }
+    
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
         .card:hover {
             transform: scale(1.02);
         }
+    
         .title {
             font-size: 1.2em;
             color: #82aaff;
             margin-bottom: 10px;
         }
+    
         .date, .competences, .description, .certification-id {
             color: #a5b4c2;
             margin-bottom: 5px;
         }
+    
         .certification-id {
             font-weight: bold;
             font-size: 0.9em;
             color: #e0e1dd;
         }
+    
         .competences {
             font-style: italic;
         }
-
+    
         /* Effet de ciel étoilé en pseudo-éléments */
         body::before, body::after {
             content: "";
@@ -120,7 +130,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at random(20%, 80%), #ffffff33 1px, transparent 1px);
+            background: radial-gradient(circle at 30% 40%, #ffffff33 1px, transparent 1px);
             z-index: -1;
         }
         body::before {
@@ -138,6 +148,7 @@
             to { opacity: 0.6; }
         }
     </style>
+    
 </head>
 <body>
 
