@@ -304,7 +304,52 @@ h2 {
     transform: translateX(5px);
 }
 
-/* Add responsive grid for larger screens */
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+    .navbar ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navbar ul li .submenu {
+        position: static;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Desktop screens */
 @media (min-width: 1200px) {
     .card-grid {
         display: grid;
