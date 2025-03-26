@@ -19,7 +19,7 @@ backLight.position.set(-5, -3, -5);
 scene.add(backLight);
 
 const textureLoader = new THREE.TextureLoader();
-const earthTexture = textureLoader.load('../assets/terre_texture.jpg');
+const earthTexture = textureLoader.load('/assets/terre_texture.jpg');
 
 const earthGeometry = new THREE.SphereGeometry(1, 64, 64);
 const earthMaterial = new THREE.MeshStandardMaterial({
