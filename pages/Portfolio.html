@@ -4,109 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Licences, Certifications et Projets</title>
-    <style>
-        /* Style de base */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #e0e1dd;
-            background: radial-gradient(circle at 50% 50%, #1c1c3b, #0d1b2a, #090e1b);
-            overflow-x: hidden;
-            background-size: cover;
-        }
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-        }
-        .navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .navbar ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        .navbar ul li a {
-            color: #e0e1dd;
-            text-decoration: none;
-            font-size: 1em;
-            font-weight: bold;
-        }
-        .navbar ul li a:hover {
-            color: #82aaff;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 100px auto 20px;
-            text-align: center;
-        }
-        .profile-image {
-            display: block;
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            margin: 20px auto;
-            border: 3px solid #ffffff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2);
-        }
-        .card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            margin: 20px 0;
-            padding: 20px;
-            transition: transform 0.2s ease;
-        }
-        .card:hover {
-            transform: scale(1.02);
-        }
-        h1, h2 {
-            color: #e0e1dd;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-        .title {
-            font-size: 1.2em;
-            color: #82aaff;
-            margin-bottom: 10px;
-        }
-        .certification-link {
-            color: #82aaff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .certification-link:hover {
-            color: #ffa82a;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
 <div class="navbar">
     <ul>
         <li><a href="#formations">Formations</a></li>
-        <li><a href="#projets">Projets</a></li>
+        <li>
+            <a href="#projets">Projets</a>
+            <div class="submenu">
+                <a href="projets.html">Mes Projets</a>
+            </div>
+        </li>
         <li><a href="#experiences">Expériences</a></li>
         <li><a href="#certifications">Licences et Certifications</a></li>
+        <li><a href="#MesInfos">Mes Infos</a></li>
     </ul>
 </div>
 
-<div class="container">
-       
-    <img src="Manuel.png" alt="Votre Photo de Profil" class="profile-image">
-    
-    <h1>Mon Portfolio</h1>
+<div class="profile-header">
+    <div class="profile-content">
+        <img src="../assets/Manuel.png" alt="Votre Photo de Profil" class="profile-image">
+        <div class="profile-text">
+            <h1>Bienvenu sur mon Site Portfolio !</h1>
+            <div class="professional-profile">
+                <h2>PROFIL & OBJECTIFS</h2>
+                <p>Je m'appelle Manuel et je suis en Bachelor 2 à l'ECE Lyon! Je suis à la recherche d'une alternance développeur pour l'année académique 2025-2026, avec un rythme de 2 semaines de cours 3 semaines en entreprises. Autonome et enthousiaste, mes premières expériences m'ont permis de renforcer mes acquis et d'appréhender les différents outils et techniques de développement et conception d'application.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-    
+<div class="container">
+    <h2>Scene 3D Three.js</h2>
+    <div class="card">
+        <div id="three-container"></div>
+    </div>
+    <div class="card" style="margin-top: 1rem;">
+        <p style="color: #e0e1dd; line-height: 1.6;">
+            Passionné par la 3D, j'ai suivi des tutoriels pour créer cette scène avec Three.js. Cette technologie est assez fun et je prévois de développer de nouvelles scènes plus complexes pour approfondir mes skills dans ce domaine.
+        </p>
+    </div>
+
+    <div class="contact-section">
+        <h2 id = "MesInfos">Mes Infos</h2>
+        <div class="contact-card">
+            <div class="contact-item">
+                <svg class="icon"><use href="../assets/icons.svg#location-icon"/></svg>
+                <span>Cours de la Liberté, 69003, Lyon</span>
+            </div>
+            <div class="contact-item">
+                <svg class="icon"><use href="../assets/icons.svg#phone-icon"/></svg>
+                <span>06 86 35 96 49</span>
+            </div>
+            <div class="contact-item">
+                <svg class="icon"><use href="../assets/icons.svg#email-icon"/></svg>
+                <span>manuel.bassien97118@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <svg class="icon"><use href="../assets/icons.svg#car-icon"/></svg>
+                <span>Permis B</span>
+            </div>
+            <div class="contact-item">
+                <svg class="icon"><use href="../assets/icons.svg#linkedin-icon"/></svg>
+                <a href="https://www.linkedin.com/in/manuelbassien" target="_blank">www.linkedin.com/in/manuelbassien</a>
+            </div>
+            <div class="contact-item">
+                <svg class="icon"><use href="../assets/icons.svg#portfolio-icon"/></svg>
+                <a href="https://manuelb971.github.io/Manuel.github.io/" target="_blank">Portfolio</a>
+            </div>
+        </div>
+    </div>
+
     <h2 id="formations">Formations</h2>
     <div class="card">
         <div class="title">ECE. Ecole d'ingénieurs. Engineering School.</div>
@@ -128,6 +98,9 @@
    
 
     <h2 id="projets">Projets</h2>
+    <div style="text-align: right; margin-bottom: 20px;">
+        <a href="projets.html" class="project-link" style="display: inline-block; padding: 10px 20px; background: rgba(130, 170, 255, 0.2); color: #e0e1dd; text-decoration: none; border-radius: 5px; transition: all 0.3s ease;">En savoir plus →</a>
+    </div>
 
     <div class="card">
         <div class="title">Création de Site Web de location de voiture de luxe</div>
@@ -218,5 +191,8 @@
 
 </div>
 
+
 </body>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script type="module" src="../js/script.js"></script>
 </html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .project-card {
+            background: rgba(13, 27, 42, 0.85);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            color: #82aaff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #e0e1dd;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(130, 170, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: #82aaff;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: #e0e1dd;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            background: rgba(130, 170, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: rgba(130, 170, 255, 0.4);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            color: #82aaff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #e0e1dd;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="./Portfolio.html#formations">Formations</a></li>
+            <li>
+                <a href="./Portfolio.html#projets">Projets</a>
+                <div class="submenu">
+                    <a href="projets.html">Mes Projets</a>
+                </div>
+            </li>
+            <li><a href="./Portfolio.html#experiences">Expériences</a></li>
+            <li><a href="./Portfolio.html#certifications">Licences et Certifications</a></li>
+            <li><a href="./Portfolio.html#MesInfos">Mes Infos</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <a href="./Portfolio.html" class="back-link">← Retour au Portfolio</a>
+        <h1>Mes Projets</h1>
+
+        <div class="project-container">
+            <div class="project-card">
+                <h2 class="project-title">Tamago - Animal Virtuel (en cours)</h2>
+                <p class="project-description">Projet perso : Application React interactive inspirée des Tamagotchis, permettant aux utilisateurs d'adopter et de s'occuper d'un animal virtuel. Gestion des niveaux de faim et de bonheur avec des animations fluides via Framer Motion et une interface moderne utilisant ShadCN/UI.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Framer Motion</span>
+                    <span class="tech-tag">ShadCN/UI</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ManuelB971/Tamago" class="project-link" target="_blank">Voir sur GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">Application TODO List</h2>
+                <p class="project-description">Application de gestion de tâches développée avec JavaFX, offrant une interface moderne et intuitive. Fonctionnalités complètes incluant l'ajout, la suppression, le filtrage des tâches et une interface administrateur.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">JavaFX</span>
+                    <span class="tech-tag">UML</span>
+                </div>
+                <div class="project-links">
+                    <a href="todo-list-project.html" class="project-link">Voir les détails</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">Site Web de Location de Voitures de Luxe</h2>
+                <p class="project-description">Développement complet d'un site web de location de voitures de luxe, incluant une interface utilisateur moderne et un système de réservation robuste. Le projet met l'accent sur une expérience utilisateur fluide et un design élégant.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">HTML</span>
+                </div>
+                
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">ECE World OL Edition</h2>
+                <p class="project-description">Jeu développé en C utilisant la bibliothèque Allegro5. Une expérience de jeu immersive combinant graphismes 2D et mécaniques de jeu engageantes. Le projet démontre une maîtrise approfondie de la programmation en C et de la gestion des ressources graphiques.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">C</span>
+                    <span class="tech-tag">Allegro5</span>
+                </div>
+                
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">ECE Labyrinthe (Bob l'éponge)</h2>
+                <p class="project-description">Jeu de labyrinthe en console basé sur l'univers de Bob l'éponge. Le projet met en œuvre des algorithmes de génération de labyrinthe et de pathfinding, offrant une expérience de jeu unique en mode console.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">C</span>
+                </div>
+               
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">La Revanche de Snoopy</h2>
+                <p class="project-description">Jeu console en C mettant en scène Snoopy dans une aventure à travers 3 niveaux de difficulté. Développement personnel du menu et du niveau 3, démontrant des compétences en travail d'équipe et en programmation structurée.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">C</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet TODO List - Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: rgba(13, 27, 42, 0.85);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .section h2 {
+            color: #82aaff;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .section h3 {
+            color: #82aaff;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        .section p {
+            color: #e0e1dd;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-item {
+            background: rgba(130, 170, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: #82aaff;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            color: #82aaff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #e0e1dd;
+        }
+
+        ul {
+            color: #e0e1dd;
+            line-height: 1.6;
+            margin-left: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="./Portfolio.html#formations">Formations</a></li>
+            <li><a href="./Portfolio.html#projets">Projets</a></li>
+            <li><a href="./Portfolio.html#experiences">Expériences</a></li>
+            <li><a href="./Portfolio.html#certifications">Licences et Certifications</a></li>
+            <li><a href="./Portfolio.html#MesInfos">Mes Infos</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <a href="projets.html" class="back-link">← Retour aux Projets</a>
+        
+        <div class="project-content">
+            <div class="section">
+                <h2>1. Introduction</h2>
+                <h3>1.1 Contexte et Objectifs</h3>
+                <p>Le projet "TODO List" est une application de gestion de tâches avec une interface utilisateur moderne. L'objectif principal était de développer une solution complète en utilisant JavaFX pour l'interface graphique, tout en implémentant un système de stockage local pour les données.</p>
+                <p>Cette application répond à un besoin fondamental d'organisation et d'optimisation des tâches quotidiennes, permettant aux utilisateurs de gérer efficacement leurs activités.</p>
+
+                <h3>1.2 Technologies Utilisées</h3>
+                <div class="tech-list">
+                    <span class="tech-item">Java</span>
+                    <span class="tech-item">JavaFX</span>
+                    <span class="tech-item">Fichiers Texte/DAT</span>
+                    <span class="tech-item">PlantUML/UML</span>
+                    <span class="tech-item">IntelliJ</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>2. Architecture de l'application</h2>
+                <h3>2.1 Structure Générale</h3>
+                <p>L'application est organisée en 4 packages principaux :</p>
+                <ul>
+                    <li>com.todo.model : Modèles (User, Task)</li>
+                    <li>com.todo.persistence : Gestion des fichiers/bases de données (Database, TaskStorage)</li>
+                    <li>com.todo.controller : Gestion des actions utilisateur (TaskManager)</li>
+                    <li>com.todo.app : Interface utilisateur (AdminPanel, MainApp, LoggingPage)</li>
+                </ul>
+
+                <h3>2.2 Diagramme UML de l'Architecture</h3>
+                <p>L'architecture a été modélisée à l'aide de PlantUML, illustrant clairement les relations entre les différents composants du système.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. Fonctionnalités Implémentées</h2>
+                
+                <h3>3.1 Affichage des Tâches</h3>
+                <p>Utilisation de TableView et ListView pour afficher les tâches avec leurs propriétés (titre, date limite, durée, état de complétion).</p>
+
+                <h3>3.2 Ajout de Tâches</h3>
+                <p>Interface intuitive permettant d'ajouter de nouvelles tâches avec leurs caractéristiques : nom, durée, date limite et catégorie.</p>
+
+                <h3>3.3 Marquage d'une Tâche comme Complétée</h3>
+                <p>Système de CheckBox permettant de modifier facilement l'état de complétion d'une tâche.</p>
+
+                <h3>3.4 Suppression des Tâches</h3>
+                <p>Bouton de suppression (❌) intégré pour chaque tâche, permettant une gestion efficace de la liste.</p>
+
+                <h3>3.5 Filtrage des Tâches</h3>
+                <p>Système de filtrage via ComboBox offrant trois options : "Toutes", "Complétées", "Non complétées".</p>
+
+                <h3>3.6 Interface Administrateur</h3>
+                <p>Panel d'administration (AdminPanel) permettant la gestion des utilisateurs, notamment la possibilité de supprimer des comptes utilisateur depuis l'interface.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
