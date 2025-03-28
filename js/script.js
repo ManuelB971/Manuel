@@ -2,9 +2,9 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.m
 
 const container = document.getElementById('three-container');
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(container.clientWidth, container.clientHeight);
 container.appendChild(renderer.domElement);
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
@@ -68,13 +68,19 @@ moonPivot.add(moon);
 
 moon.position.x = 8; 
 
-camera.position.z = 10;
+camera.position.z = 15;
 let targetZoom = camera.position.z;
+
+window.addEventListener('resize', () => {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+});
 
 window.addEventListener('wheel', (event) => {
     const zoomSpeed = 0.5;
     targetZoom += event.deltaY * zoomSpeed * 0.01;
-    targetZoom = Math.max(2, Math.min(targetZoom, 50));
+    targetZoom = Math.max(5, Math.min(targetZoom, 30)); 
 });
 
 function animate() {
