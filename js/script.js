@@ -19,9 +19,9 @@ backLight.position.set(-5, -3, -5);
 scene.add(backLight);
 
 const textureLoader = new THREE.TextureLoader();
-const earthTexture = textureLoader.load("assets/Mars_texture.jpg");
+const earthTexture = textureLoader.load("assets/terre_texture.jpg");
 
-const earthGeometry = new THREE.SphereGeometry(1, 64, 64);
+const earthGeometry = new THREE.SphereGeometry(2, 64, 64);
 const earthMaterial = new THREE.MeshStandardMaterial({
     map: earthTexture,
     metalness: 0.2,
@@ -52,6 +52,22 @@ const starMaterial = new THREE.PointsMaterial({
 const stars = new THREE.Points(starGeometry, starMaterial);
 scene.add(stars);
 
+const moonGeometry = new THREE.SphereGeometry(1, 64, 64);
+const moonTexture = textureLoader.load("assets/Mars_texture.jpg");
+const moonMaterial = new THREE.MeshStandardMaterial({
+    map: moonTexture,
+    metalness: 0.2,
+    roughness: 0.8
+});
+const moon = new THREE.Mesh(moonGeometry, moonMaterial);
+scene.add(moon);
+
+const moonPivot = new THREE.Object3D();
+earth.add(moonPivot);
+moonPivot.add(moon);
+
+moon.position.x = 8; 
+
 camera.position.z = 10;
 let targetZoom = camera.position.z;
 
@@ -67,6 +83,12 @@ function animate() {
     camera.position.z += (targetZoom - camera.position.z) * 0.1;
 
     earth.rotation.y += 0.002;
+    
+    
+    moonPivot.rotation.y += 0.005;
+    
+    moon.rotation.y += 0.01;
+    
     stars.rotation.y += 0.0005;
     stars.rotation.x += 0.0002;
 
