@@ -115,3 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     cards.forEach(card => observer.observe(card));
 });
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.navbar').classList.toggle('active');
+    document.querySelector('.overlay').classList.toggle('active');
+});
