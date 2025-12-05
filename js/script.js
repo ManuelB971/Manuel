@@ -19,7 +19,7 @@ backLight.position.set(-5, -3, -5);
 scene.add(backLight);
 
 const textureLoader = new THREE.TextureLoader();
-const earthTexture = textureLoader.load("assets/terre_texture.jpg");
+const earthTexture = textureLoader.load("assets/terre_texture.webp");
 
 const earthGeometry = new THREE.SphereGeometry(2, 64, 64);
 const earthMaterial = new THREE.MeshStandardMaterial({
@@ -53,7 +53,7 @@ const stars = new THREE.Points(starGeometry, starMaterial);
 scene.add(stars);
 
 const moonGeometry = new THREE.SphereGeometry(1, 64, 64);
-const moonTexture = textureLoader.load("assets/Mars_texture.jpg");
+const moonTexture = textureLoader.load("assets/Mars_texture.webp");
 const moonMaterial = new THREE.MeshStandardMaterial({
     map: moonTexture,
     metalness: 0.2,
@@ -122,8 +122,21 @@ document.addEventListener('DOMContentLoaded', function() {
     cards.forEach(card => observer.observe(card));
 });
 
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    this.classList.toggle('active');
-    document.querySelector('.navbar').classList.toggle('active');
-    document.querySelector('.overlay').classList.toggle('active');
-});
+// Gestion du menu mobile avec null checks
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+const overlay = document.querySelector('.overlay');
+
+if (menuToggle && navbar && overlay) {
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navbar.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
+    
+    overlay.addEventListener('click', function() {
+        menuToggle.classList.remove('active');
+        navbar.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+}

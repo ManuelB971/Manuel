@@ -1,0 +1,89 @@
+# ============================================
+# CORS et Sécurité
+# ============================================
+
+# Autoriser les fonts SVG et autres ressources
+<FilesMatch "\.(svg|woff|woff2|ttf|eot|otf)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</FilesMatch>
+
+# ============================================
+# Compression GZIP
+# ============================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript font/opentype image/svg+xml
+    AddEncoding gzip svg
+</IfModule>
+
+# ============================================
+# Cache pour les ressources statiques
+# ============================================
+
+# Cache pour les images (1 an)
+<FilesMatch "\.(webp|jpg|jpeg|png|gif|svg|ico)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+    Header set Expires "Thu, 01 Jan 2099 00:00:00 GMT"
+</FilesMatch>
+
+# Cache pour les fichiers CSS et JS (30 jours)
+<FilesMatch "\.(css|js)$">
+    Header set Cache-Control "max-age=2592000, public"
+    Header set Expires "Wed, 05 Jan 2026 00:00:00 GMT"
+</FilesMatch>
+
+# Cache pour les polices (1 an)
+<FilesMatch "\.(woff|woff2|ttf|eot|otf)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+    Header set Expires "Thu, 01 Jan 2099 00:00:00 GMT"
+</FilesMatch>
+
+# Cache pour les documents HTML (7 jours)
+<FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "max-age=604800, public, must-revalidate"
+    Header set Expires "Fri, 05 Dec 2025 00:00:00 GMT"
+</FilesMatch>
+
+# Pas de cache pour les fichiers sensibles
+<FilesMatch "\.(php|xml|json)$">
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</FilesMatch>
+
+# ============================================
+# ETags et optimisations
+# ============================================
+
+<IfModule mod_headers.c>
+    Header unset ETag
+    FileETag None
+</IfModule>
+
+# ============================================
+# Sécurité
+# ============================================
+
+# Éviter le clickjacking
+Header set X-Frame-Options "SAMEORIGIN"
+
+# Protection XSS
+Header set X-XSS-Protection "1; mode=block"
+
+# Type MIME
+Header set X-Content-Type-Options "nosniff"
+
+# Politique de sécurité du contenu (CSP) - permissif pour les ressources CDN
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; connect-src 'self'"
+
+# ============================================
+# Redirection et réécriture
+# ============================================
+
+# Forcer HTTPS (décommenter si sur HTTPS)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+

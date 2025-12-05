@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Licences, Certifications et Projets</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body id="top">
+
+<div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="overlay"></div>
 
 <div class="navbar">
     <ul>
@@ -26,7 +33,13 @@
 
 <div class="profile-header">
     <div class="profile-content">
-        <img src="assets/Manuel.png" alt="Votre Photo de Profil" class="profile-image">
+        <img 
+            src="assets/Manuel.webp" 
+            alt="Votre Photo de Profil" 
+            class="profile-image"
+            srcset="assets/Manuel.webp 1200w"
+            sizes="(max-width: 480px) 100vw, (max-width: 800px) 80vw, 600px"
+            loading="lazy">
         <div class="profile-text">
             <h1>Bienvenue sur mon Site Portfolio !</h1>
             <div class="professional-profile">
@@ -202,6 +215,6 @@
 
 
 </body>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<script type="module" src="js/script.js"></script>
+<!-- FontAwesome SVG icons intégrés directement -->
+<script type="module" src="js/script.js" defer></script>
 </html>
